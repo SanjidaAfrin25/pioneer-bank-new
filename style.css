@@ -1,0 +1,36 @@
+body {
+    margin: 100px;
+}
+
+.login-style {
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 50px;
+}
+
+#tranjectionalArea {
+    display: none;
+}
+
+.status {
+    margin: 0, 20px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.Deposite {
+    background-color: slateblue;
+    margin: 10px;
+}
+
+.Withdraw {
+    background-color: lightcoral;
+    margin: 10px;
+}
+
+.Balance {
+    background-color: orange;
+    margin: 10px;
+}
