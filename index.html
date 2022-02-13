@@ -71,13 +71,22 @@
             })
             //Add deposite
         document.getElementById('depositeButton').addEventListener('click', function() {
-            const depositeAmount = document.getElementById('depositeAmount').value;
-            const depositeNumber = parseFloat(depositeAmount);
 
-            const currentDeposite = document.getElementById('currentDeposite').innerText;
-            const currentNumber = parseFloat(currentDeposite);
-            const total = depositeNumber + currentNumber;
-            document.getElementById('currentDeposite').innerText = total;
+
+            const depositeAmount = document.getElementById('depositeAmount').value;
+            if (depositeAmount < 0) {
+                alert('Deposite number cannot be negative')
+
+            } else {
+                const depositeNumber = parseFloat(depositeAmount);
+
+                const currentDeposite = document.getElementById('currentDeposite').innerText;
+                const currentNumber = parseFloat(currentDeposite);
+                const total = depositeNumber + currentNumber;
+                document.getElementById('currentDeposite').innerText = total;
+
+
+            }
 
 
             //add Balance
@@ -94,21 +103,25 @@
         //withdraw
         document.getElementById('withdrawButton').addEventListener('click', function() {
             const withdrawAmount = document.getElementById('withdrawAmount').value;
-            const withdrawNumber = parseFloat(withdrawAmount);
+            if (withdrawAmount < 0) {
+                alert('Withdraw number cannot be negative')
+            } else {
+                const withdrawNumber = parseFloat(withdrawAmount);
 
-            const currentWithdraw = document.getElementById('currentWithdraw').innerText;
-            const currentWithdrawNumber = parseFloat(currentWithdraw);
-            totalWithdraw = currentWithdrawNumber + withdrawNumber;
+                const currentWithdraw = document.getElementById('currentWithdraw').innerText;
+                const currentWithdrawNumber = parseFloat(currentWithdraw);
+                totalWithdraw = currentWithdrawNumber + withdrawNumber;
 
-            document.getElementById('currentWithdraw').innerText = totalWithdraw;
-
-
-            const currentBalance = document.getElementById('currentBalance').innerText;
-            const currentBalanceNumber = parseFloat(currentBalance);
-            totalBalance = currentBalanceNumber - totalWithdraw;
-            document.getElementById('currentBalance').innerText = totalBalance;
+                document.getElementById('currentWithdraw').innerText = totalWithdraw;
 
 
+                const currentBalance = document.getElementById('currentBalance').innerText;
+                const currentBalanceNumber = parseFloat(currentBalance);
+                totalBalance = currentBalanceNumber - totalWithdraw;
+                document.getElementById('currentBalance').innerText = totalBalance;
+
+
+            }
         })
     </script>
 </body>
